@@ -18,10 +18,10 @@ module.exports = {
   
   plugins: [new Webpack.DefinePlugin({
 		'process.env': {
-			'NODE_ENV': process.env.ENV,
-			'keyMaps': process.env.keyMaps,
-			'keyTrails': process.env.keyTrails,
-			'keyWeather': process.env.keyWeather
+			'NODE_ENV': JSON.stringify(process.env.ENV),
+			'keyMaps': JSON.stringify(process.env.keyMaps),
+			'keyTrails': JSON.stringify(process.env.keyTrails),
+			'keyWeather': JSON.stringify(process.env.keyWeather)
 		},
 		
 		module: false,
