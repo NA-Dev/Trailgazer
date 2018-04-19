@@ -24,6 +24,6 @@ module.exports = {
 			'keyWeather': process.env.keyWeather
 		},
 		
-		sourceMap: false,
+		module: false,
 	})]
 };
