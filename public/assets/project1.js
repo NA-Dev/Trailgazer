@@ -35,7 +35,6 @@ var map;
 
 // Get user name and location
 $(document).ready(function() {
-	console.log("document.ready");
 
 	showRandom();
 
@@ -73,8 +72,6 @@ $(document).ready(function() {
 function geocode(address) {
 	event.preventDefault();
 
-	console.log("geocode: " + address);
-
 	var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?key=";
 
 	queryURL += keyMaps + "&address=" + address;
@@ -102,7 +99,6 @@ function geocode(address) {
 			};
 
 			getTrails(lat, lng);
-			console.log(lat, lng);
 
 		} else {
 			alert('Geocode unsuccessful.');
@@ -115,7 +111,6 @@ function geocode(address) {
 // executes upon page load
 // shows random place results
 function showRandom() {
-	console.log("showRandom");
 
 	var rand = Math.floor(Math.random()*placeholder.length);
 	var lat = placeholder[rand].lat;
@@ -128,7 +123,6 @@ function showRandom() {
 // executes when result img clicked
 // generates details card HTML
 function showDetails() {
-	console.log("showDetails");
 
 	window.scrollTo(0, 160);
 
@@ -274,7 +268,6 @@ database.ref().on("value", function(snapshot) {
 // REI Hiking Project API
 // source of hiking trail data
 function getTrails(lat, lng) {
-	console.log("getTrails of " + lat + ", " + lng);
 
 	var queryURL = "https://www.hikingproject.com/data/get-trails?key=";
 
@@ -350,7 +343,6 @@ function getTrails(lat, lng) {
 
 // Open Weather API
 function getWeather(lat, lng) {
-	console.log("getWeather", lat, lng);
 
 	var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng + "&units=imperial&appid=" + keyWeather;
 
@@ -386,7 +378,6 @@ function getWeather(lat, lng) {
 // generates dynamic HTML from results
 // fills in placeholder if img not available
 function renderCards() {
-	console.log("renderCards");
 
 	$("#resultList").empty();
 
@@ -468,8 +459,6 @@ function initAutocomplete() {
 		(document.getElementById('address-input')),
 	    {types: ['geocode']});
 
-	console.log(autocomplete);
-
 	autocomplete.addListener('place_changed', fillInAddress);
 
 	return autocomplete;
@@ -479,7 +468,6 @@ function initAutocomplete() {
 // executes upon page load
 // requests location from user's browser
 function geolocate() {
-	console.log("geolocate");
 
 	if (navigator.geolocation) {
 
@@ -546,8 +534,6 @@ function mapBox(lat, lng) {
 // iNaturalist API
 function iNaturalist(lat, lng) {
 
-	console.log("naturalist", lat, lng);
-
 	var radius = 20;
 
 	var speciesQueryURL = "https://api.inaturalist.org/v1/observations/"
@@ -580,8 +566,6 @@ function iNaturalist(lat, lng) {
 
 
 		$("#right").on("click", function next() {
-			console.log(species.length);
-
 
 			var i = $("#wild-img").data("index");
 
@@ -604,7 +588,6 @@ function iNaturalist(lat, lng) {
 		})
 
 		$("#left").on("click", function previous() {
-			console.log("prev");
 
 			var i = $("#wild-img").data("index");
 
