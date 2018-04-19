@@ -453,6 +453,7 @@ function renderCards() {
 
 // Google Maps Places API
 // used to fillInAddress
+window.initAutocomplete = initAutocomplete;
 function initAutocomplete() {
 
 	autocomplete = new google.maps.places.Autocomplete(

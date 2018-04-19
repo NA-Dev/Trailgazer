@@ -2,10 +2,12 @@
   "name": "trailgazer",
   "version": "1.0.0",
   "description": "Trailgazers is a team-developed web app for discovering new hiking trails",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --config webpack.config.js && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack -p --config ./webpack.config.js --progress"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/NA-Dev/Project1#readme",
   "dependencies": {
+    "dotenv-webpack": "^1.5.5",
     "express": "^4.16.2"
   }
 }
