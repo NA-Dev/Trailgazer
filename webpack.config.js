@@ -22,6 +22,8 @@ module.exports = {
 			'keyMaps': process.env.keyMaps,
 			'keyTrails': process.env.keyTrails,
 			'keyWeather': process.env.keyWeather
-		}
+		},
+		
+		sourceMap: false,
 	})]
 };
