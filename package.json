@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/NA-Dev/Project1#readme",
   "dependencies": {
-    "dotenv-webpack": "^1.5.5",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "webpack": "^4.6.0"
   }
 }
