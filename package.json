@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/NA-Dev/Project1#readme",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.14"
   }
